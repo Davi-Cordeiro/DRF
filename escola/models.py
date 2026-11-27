@@ -25,3 +25,7 @@ class Curso(models.Model):
 
     def __str__(self):
         return self.codigo
+
+class Matricula(models.Model):
+    estudante = models.ForeignKey(Estudante, on_delete= models.CASCADE)
+    curso = models.ForeignKey(Curso, on_delete= models.CASCADE)
